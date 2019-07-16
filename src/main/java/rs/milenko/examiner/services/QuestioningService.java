@@ -2,7 +2,7 @@ package rs.milenko.examiner.services;
 
 import org.springframework.stereotype.Service;
 import rs.milenko.examiner.entities.ermodel.Entity;
-import rs.milenko.examiner.services.questioning.QuestionGenerator;
+import rs.milenko.examiner.questioning.questions_generator.QuestionGenerator;
 
 import java.util.List;
 
@@ -11,10 +11,11 @@ public class QuestioningService {
 
     private EntityService entityService;
 
-//    private QuestionGenerator
+    private QuestionGenerator questionGenerator;
 
-    public QuestioningService(EntityService entityService) {
+    public QuestioningService(EntityService entityService, QuestionGenerator questionGenerator) {
         this.entityService = entityService;
+        this.questionGenerator = questionGenerator;
     }
 
     // TODO: for testing purpose, remove afterwards

@@ -1,4 +1,4 @@
-package rs.milenko.examiner.entities.questions;
+package rs.milenko.examiner.questioning;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

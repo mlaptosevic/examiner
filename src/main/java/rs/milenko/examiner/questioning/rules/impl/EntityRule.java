@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import rs.milenko.examiner.entities.ermodel.ERModel;
 import rs.milenko.examiner.entities.ermodel.Entity;
-import rs.milenko.examiner.entities.questions.Question;
+import rs.milenko.examiner.questioning.Question;
 import rs.milenko.examiner.questioning.rules.AbstractRule;
 
 import java.util.List;

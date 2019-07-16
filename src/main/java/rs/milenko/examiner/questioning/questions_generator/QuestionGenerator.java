@@ -1,15 +1,16 @@
 package rs.milenko.examiner.questioning.questions_generator;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.stereotype.Service;
 import rs.milenko.examiner.entities.ermodel.ERModel;
-import rs.milenko.examiner.entities.questions.Question;
+import rs.milenko.examiner.questioning.Question;
 import rs.milenko.examiner.questioning.rules.Rule;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Service
 public abstract class QuestionGenerator {
 
     private List<Rule> rules;
