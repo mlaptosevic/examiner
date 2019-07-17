@@ -21,3 +21,7 @@ insert into entity_relationship_connection (id, cardinality, entity_id, relation
 insert into entity_relationship_connection (id, cardinality, entity_id, relationship_id) values (2, 0, 2, 1);
 insert into entity_relationship_connection (id, cardinality, entity_id, relationship_id) values (3, 0, 2, 2);
 insert into entity_relationship_connection (id, cardinality, entity_id, relationship_id) values (4, 0, 3, 2);
+
+insert into ermodel (id) values (1);
+
+insert into assignment (id, assignmentText, ermodel_id) values (1, 'TEST TEXT', 1);
