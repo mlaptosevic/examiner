@@ -25,3 +25,15 @@ insert into entity_relationship_connection (id, cardinality, entity_id, relation
 insert into ermodel (id) values (1);
 
 insert into assignment (id, assignment_text, correct_answer_id) values (1, 'TEST TEXT', 1);
+
+insert into ermodel_connections (ermodel_id, connections_id) values (1, 1);
+insert into ermodel_connections (ermodel_id, connections_id) values (1, 2);
+insert into ermodel_connections (ermodel_id, connections_id) values (1, 3);
+insert into ermodel_connections (ermodel_id, connections_id) values (1, 4);
+
+insert into ermodel_entities (ermodel_id, entities_id) values (1, 1);
+insert into ermodel_entities (ermodel_id, entities_id) values (1, 2);
+insert into ermodel_entities (ermodel_id, entities_id) values (1, 3);
+
+insert into ermodel_relationships (ermodel_id, relationships_id) values (1, 1);
+insert into ermodel_relationships (ermodel_id, relationships_id) values (1, 2);
