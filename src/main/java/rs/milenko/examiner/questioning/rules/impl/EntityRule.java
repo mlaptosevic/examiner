@@ -46,4 +46,8 @@ public final class EntityRule extends AbstractRule<Entity> {
                 .collect(Collectors.toList());
     }
 
+    protected List<String> getQuestionTemplates() {
+        return questionTemplates;
+    }
+
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 import rs.milenko.examiner.entities.model.ermodel.ERModel;
 import rs.milenko.examiner.questioning.Question;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,8 +15,6 @@ public abstract class AbstractRule<E> implements Rule {
     protected int maxNumberOfEntitiesUsed = 5;
 
     protected double numberOfPoints = 50;
-
-    protected List<String> questionTemplates = List.of("Where is %s defined?");
 
     public AbstractRule(int percentageOfElementsUsed, int minNumberOfEntitiesUsed, int maxNumberOfEntitiesUsed, double numberOfPoints) {
         this.percentageOfElementsUsed = percentageOfElementsUsed;
@@ -31,18 +30,20 @@ public abstract class AbstractRule<E> implements Rule {
     }
 
     protected String generateTextQuestion(String ...args) {
-        String randomQuestionTemplate = getRandomlySelectedElements(questionTemplates, 1).get(0);
+        String randomQuestionTemplate = getRandomlySelectedElements(new ArrayList<>(getQuestionTemplates()), 1).get(0);
 
         return String.format(randomQuestionTemplate, args);
     }
 
+    protected abstract List<String> getQuestionTemplates();
+
     protected int calculateNumberOfQuestions(int size) {
-        int numberOfEntitiesUsed = size * percentageOfElementsUsed;
+        int numberOfEntitiesUsed = size * percentageOfElementsUsed / 100;
 
         numberOfEntitiesUsed = numberOfEntitiesUsed < minNumberOfEntitiesUsed ?
                 minNumberOfEntitiesUsed : numberOfEntitiesUsed;
 
-        numberOfEntitiesUsed = numberOfEntitiesUsed > maxNumberOfEntitiesUsed ?
+        numberOfEntitiesUsed = !(maxNumberOfEntitiesUsed == 0) && numberOfEntitiesUsed > maxNumberOfEntitiesUsed ?
                 maxNumberOfEntitiesUsed : numberOfEntitiesUsed;
 
         return numberOfEntitiesUsed;

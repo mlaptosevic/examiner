@@ -21,9 +21,9 @@ public abstract class QuestionGenerator {
     public List<Question> generateQuestions() {
         List<Question> questions = new ArrayList<>();
 
-        rules.forEach(rule -> {
+        for(Rule rule: rules) {
             questions.addAll(rule.generateQuestions(erModel));
-        });
+        }
 
         return questions;
     }
