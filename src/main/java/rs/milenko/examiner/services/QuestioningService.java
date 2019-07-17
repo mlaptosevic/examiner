@@ -1,8 +1,11 @@
 package rs.milenko.examiner.services;
 
 import org.springframework.stereotype.Service;
-import rs.milenko.examiner.entities.model.ermodel.Entity;
+import rs.milenko.examiner.entities.model.ermodel.ERModel;
+import rs.milenko.examiner.entities.repositories.ERModelRepository;
+import rs.milenko.examiner.questioning.Question;
 import rs.milenko.examiner.questioning.questions_generator.QuestionGenerator;
+import rs.milenko.examiner.questioning.questions_generator.impl.ExamQuestionGenerator;
 
 import java.util.List;
 
@@ -11,26 +14,19 @@ public class QuestioningService {
 
     private EntityService entityService;
 
-    private QuestionGenerator questionGenerator;
+    private ERModelRepository erModelRepository;
 
-    public QuestioningService(EntityService entityService, QuestionGenerator questionGenerator) {
+    public QuestioningService(EntityService entityService, ERModelRepository erModelRepository) {
         this.entityService = entityService;
-        this.questionGenerator = questionGenerator;
+        this.erModelRepository = erModelRepository;
     }
 
     // TODO: for testing purpose, remove afterwards
-    public String question() {
-        List<Entity> entities = entityService.getAllEntities();
+    public List<Question> question() {
+        ERModel erModel = erModelRepository.findAll().get(0);
 
-        StringBuilder sBuilder = new StringBuilder();
+        QuestionGenerator questionGenerator = new ExamQuestionGenerator(erModel);
 
-        sBuilder.append("List of all entities: \n");
-
-        for(Entity entity: entities) {
-            sBuilder.append(entity.getName());
-            sBuilder.append('\n');
-        }
-
-        return sBuilder.toString();
+        return questionGenerator.generateQuestions();
     }
 }

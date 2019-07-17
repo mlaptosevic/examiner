@@ -24,4 +24,4 @@ insert into entity_relationship_connection (id, cardinality, entity_id, relation
 
 insert into ermodel (id) values (1);
 
-insert into assignment (id, assignmentText, ermodel_id) values (1, 'TEST TEXT', 1);
+insert into assignment (id, assignment_text, correct_answer_id) values (1, 'TEST TEXT', 1);
