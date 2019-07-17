@@ -3,7 +3,7 @@ package rs.milenko.examiner.questioning.questions_generator;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
-import rs.milenko.examiner.entities.ermodel.ERModel;
+import rs.milenko.examiner.entities.model.ermodel.ERModel;
 import rs.milenko.examiner.questioning.Question;
 import rs.milenko.examiner.questioning.rules.Rule;
 

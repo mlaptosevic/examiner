@@ -3,8 +3,8 @@ package rs.milenko.examiner.questioning.rules.impl;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import rs.milenko.examiner.entities.ermodel.ERModel;
-import rs.milenko.examiner.entities.ermodel.Entity;
+import rs.milenko.examiner.entities.model.ermodel.ERModel;
+import rs.milenko.examiner.entities.model.ermodel.Entity;
 import rs.milenko.examiner.questioning.Question;
 import rs.milenko.examiner.questioning.rules.AbstractRule;
 

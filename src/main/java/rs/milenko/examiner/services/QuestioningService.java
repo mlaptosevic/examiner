@@ -1,7 +1,7 @@
 package rs.milenko.examiner.services;
 
 import org.springframework.stereotype.Service;
-import rs.milenko.examiner.entities.ermodel.Entity;
+import rs.milenko.examiner.entities.model.ermodel.Entity;
 import rs.milenko.examiner.questioning.questions_generator.QuestionGenerator;
 
 import java.util.List;

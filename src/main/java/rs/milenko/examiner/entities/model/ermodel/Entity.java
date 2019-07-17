@@ -1,4 +1,4 @@
-package rs.milenko.examiner.entities.ermodel;
+package rs.milenko.examiner.entities.model.ermodel;
 
 import lombok.Data;
 
