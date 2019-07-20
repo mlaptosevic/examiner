@@ -1,8 +1,8 @@
-package rs.milenko.examiner.questioning.rules;
+package rs.milenko.examiner.services.questioning.rules;
 
 import lombok.Data;
 import rs.milenko.examiner.entities.model.ermodel.ERModel;
-import rs.milenko.examiner.questioning.Question;
+import rs.milenko.examiner.services.questioning.Question;
 
 import java.util.ArrayList;
 import java.util.Collections;

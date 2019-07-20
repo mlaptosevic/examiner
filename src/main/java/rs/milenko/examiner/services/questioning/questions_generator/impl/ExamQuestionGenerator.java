@@ -1,9 +1,9 @@
-package rs.milenko.examiner.questioning.questions_generator.impl;
+package rs.milenko.examiner.services.questioning.questions_generator.impl;
 
 import rs.milenko.examiner.entities.model.ermodel.ERModel;
-import rs.milenko.examiner.questioning.questions_generator.QuestionGenerator;
-import rs.milenko.examiner.questioning.rules.impl.EntityRule;
-import rs.milenko.examiner.questioning.rules.Rule;
+import rs.milenko.examiner.services.questioning.questions_generator.QuestionGenerator;
+import rs.milenko.examiner.services.questioning.rules.impl.EntityRule;
+import rs.milenko.examiner.services.questioning.rules.Rule;
 
 import java.util.List;
 

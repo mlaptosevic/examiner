@@ -3,9 +3,9 @@ package rs.milenko.examiner.services;
 import org.springframework.stereotype.Service;
 import rs.milenko.examiner.entities.model.ermodel.ERModel;
 import rs.milenko.examiner.entities.repositories.ERModelRepository;
-import rs.milenko.examiner.questioning.Question;
-import rs.milenko.examiner.questioning.questions_generator.QuestionGenerator;
-import rs.milenko.examiner.questioning.questions_generator.impl.ExamQuestionGenerator;
+import rs.milenko.examiner.services.questioning.Question;
+import rs.milenko.examiner.services.questioning.questions_generator.QuestionGenerator;
+import rs.milenko.examiner.services.questioning.questions_generator.impl.ExamQuestionGenerator;
 
 import java.util.List;
 

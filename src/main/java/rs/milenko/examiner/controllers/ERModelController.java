@@ -4,7 +4,7 @@ package rs.milenko.examiner.controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import rs.milenko.examiner.questioning.Question;
+import rs.milenko.examiner.services.questioning.Question;
 import rs.milenko.examiner.services.QuestioningService;
 
 import java.util.List;

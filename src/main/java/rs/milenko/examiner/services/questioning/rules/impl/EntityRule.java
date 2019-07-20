@@ -1,12 +1,12 @@
-package rs.milenko.examiner.questioning.rules.impl;
+package rs.milenko.examiner.services.questioning.rules.impl;
 
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import rs.milenko.examiner.entities.model.ermodel.ERModel;
 import rs.milenko.examiner.entities.model.ermodel.Entity;
-import rs.milenko.examiner.questioning.Question;
-import rs.milenko.examiner.questioning.rules.AbstractRule;
+import rs.milenko.examiner.services.questioning.Question;
+import rs.milenko.examiner.services.questioning.rules.AbstractRule;
 
 import java.util.List;
 import java.util.stream.Collectors;
