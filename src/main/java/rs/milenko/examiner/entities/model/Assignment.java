@@ -13,6 +13,8 @@ public class Assignment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    private String title;
+
     private String assignmentText;
 
     @OneToOne

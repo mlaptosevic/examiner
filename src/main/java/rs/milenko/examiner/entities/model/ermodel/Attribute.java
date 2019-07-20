@@ -13,4 +13,10 @@ public class Attribute {
     private long id;
 
     private String name;
+
+    private boolean isPrimaryKey;
+
+    @OneToOne
+    @JoinColumn(referencedColumnName = "id")
+    private Entity entity;
 }

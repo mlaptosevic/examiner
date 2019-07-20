@@ -2,10 +2,9 @@ package rs.milenko.examiner.entities.model.ermodel;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,7 +14,11 @@ public class Relationship {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private boolean isObject;
+    @OneToOne
+    @JoinColumn(referencedColumnName = "id")
+    private ERModel erModel;
 
-    private String name;
+    @OneToMany
+    @JoinColumn(referencedColumnName = "id")
+    private List<RelationshipEdge> relationshipEdgeList;
 }

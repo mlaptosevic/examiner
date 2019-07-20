@@ -2,7 +2,7 @@ package rs.milenko.examiner.services;
 
 import org.springframework.stereotype.Service;
 import rs.milenko.examiner.entities.model.ermodel.Entity;
-import rs.milenko.examiner.entities.model.ermodel.EntityRelationshipConnection;
+import rs.milenko.examiner.entities.model.ermodel.RelationshipEdge;
 import rs.milenko.examiner.entities.repositories.EntityRelationshipConnectionRepository;
 import rs.milenko.examiner.entities.repositories.EntityRepository;
 import rs.milenko.examiner.entities.repositories.RelationshipRepository;
@@ -31,8 +31,4 @@ public class EntityService {
         return entityRepository.findAll();
     }
 
-    public List<Entity> getAllEntitiesConnectedToEntity(long entityId) {
-        return ercRepository.getAllByEntity(entityId).stream()
-                .map(EntityRelationshipConnection::getEntity).collect(Collectors.toList());
-    }
 }

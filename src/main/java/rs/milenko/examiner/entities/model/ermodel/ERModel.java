@@ -16,13 +16,9 @@ public class ERModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany
+    @OneToMany(mappedBy = "erModel")
     List<Entity> entities;
 
-    @OneToMany
+    @OneToMany(mappedBy = "erModel")
     List<Relationship> relationships;
-
-    @OneToMany
-    List<EntityRelationshipConnection> connections;
-
 }

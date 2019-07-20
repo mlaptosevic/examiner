@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @javax.persistence.Entity
-public class EntityRelationshipConnection {
+public class RelationshipEdge {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,5 +21,7 @@ public class EntityRelationshipConnection {
     @JoinColumn(referencedColumnName = "id")
     private Relationship relationship;
 
-    private int cardinality;
+    @OneToOne
+    @JoinColumn(referencedColumnName = "id")
+    private ERModel erModel;
 }

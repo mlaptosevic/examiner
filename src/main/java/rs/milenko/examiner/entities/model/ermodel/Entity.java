@@ -2,10 +2,7 @@ package rs.milenko.examiner.entities.model.ermodel;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -18,6 +15,10 @@ public class Entity {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "entity")
     private List<Attribute>  attributes;
+
+    @OneToOne
+    @JoinColumn(referencedColumnName = "id")
+    private ERModel erModel;
 }
