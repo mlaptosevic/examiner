@@ -20,8 +20,4 @@ public class RelationshipEdge {
     @OneToOne
     @JoinColumn(referencedColumnName = "id")
     private Relationship relationship;
-
-    @OneToOne
-    @JoinColumn(referencedColumnName = "id")
-    private ERModel erModel;
 }

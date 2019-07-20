@@ -18,7 +18,6 @@ public class Relationship {
     @JoinColumn(referencedColumnName = "id")
     private ERModel erModel;
 
-    @OneToMany
-    @JoinColumn(referencedColumnName = "id")
-    private List<RelationshipEdge> relationshipEdgeList;
+    @OneToMany(mappedBy = "relationship")
+    private List<RelationshipEdge> relationshipEdge;
 }

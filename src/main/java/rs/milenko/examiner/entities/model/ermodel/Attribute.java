@@ -16,6 +16,8 @@ public class Attribute {
 
     private boolean isPrimaryKey;
 
+    private boolean isForeignKey;
+
     @OneToOne
     @JoinColumn(referencedColumnName = "id")
     private Entity entity;
