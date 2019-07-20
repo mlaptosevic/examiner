@@ -2,7 +2,7 @@ package rs.milenko.examiner.services.questioning.rules;
 
 import lombok.Data;
 import rs.milenko.examiner.entities.model.ermodel.ERModel;
-import rs.milenko.examiner.services.questioning.Question;
+import rs.milenko.examiner.entities.model.Question;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,6 +15,9 @@ public abstract class AbstractRule<E> implements Rule {
     protected int maxNumberOfEntitiesUsed;
 
     protected double numberOfPoints;
+
+    public static final int IGNORE_MAX_NUMBER_OF_ENTRIES_USED = 0;
+
 
     protected AbstractRule(int percentageOfElementsUsed, int minNumberOfEntitiesUsed, int maxNumberOfEntitiesUsed, double numberOfPoints) {
         this.percentageOfElementsUsed = percentageOfElementsUsed;
@@ -43,7 +46,7 @@ public abstract class AbstractRule<E> implements Rule {
         numberOfEntitiesUsed = numberOfEntitiesUsed < minNumberOfEntitiesUsed ?
                 minNumberOfEntitiesUsed : numberOfEntitiesUsed;
 
-        numberOfEntitiesUsed = !(maxNumberOfEntitiesUsed == 0) && numberOfEntitiesUsed > maxNumberOfEntitiesUsed ?
+        numberOfEntitiesUsed = !(maxNumberOfEntitiesUsed == IGNORE_MAX_NUMBER_OF_ENTRIES_USED) && numberOfEntitiesUsed > maxNumberOfEntitiesUsed ?
                 maxNumberOfEntitiesUsed : numberOfEntitiesUsed;
 
         return numberOfEntitiesUsed;

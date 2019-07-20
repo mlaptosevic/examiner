@@ -1,7 +1,7 @@
 package rs.milenko.examiner.services.questioning.rules;
 
 import rs.milenko.examiner.entities.model.ermodel.ERModel;
-import rs.milenko.examiner.services.questioning.Question;
+import rs.milenko.examiner.entities.model.Question;
 
 import java.util.List;
 

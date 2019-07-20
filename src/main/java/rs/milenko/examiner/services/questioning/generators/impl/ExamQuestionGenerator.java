@@ -1,22 +1,16 @@
-package rs.milenko.examiner.services.questioning.questions_generator.impl;
+package rs.milenko.examiner.services.questioning.generators.impl;
 
-import rs.milenko.examiner.entities.model.ermodel.ERModel;
-import rs.milenko.examiner.services.questioning.questions_generator.QuestionGenerator;
+import org.springframework.stereotype.Service;
+import rs.milenko.examiner.services.questioning.generators.QuestionGenerator;
 import rs.milenko.examiner.services.questioning.rules.impl.EntityRule;
 import rs.milenko.examiner.services.questioning.rules.Rule;
 
 import java.util.List;
 
+@Service
 public class ExamQuestionGenerator extends QuestionGenerator {
 
-    public ExamQuestionGenerator(ERModel erModel) {
-        List<Rule> rules = initRules();
-
-        setErModel(erModel);
-        setRules(rules);
-    }
-
-    private List<Rule> initRules() {
+    protected List<Rule> initRules() {
         Rule entityRule = EntityRule.builder()
                                     .percentageOfElementsUsed(100)
                                     .numberOfPoints(50)
