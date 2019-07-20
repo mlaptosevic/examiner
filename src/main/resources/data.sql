@@ -2,29 +2,29 @@ insert ermodel (id) values (1);
 
 insert into assignment (id, title, assignment_text, correct_answer_id) values (1, 'Manufacturer', 'A manufacturing company produces products. The following product information is stored: product name, product ID and quantity on hand. These products are made up of many components. Each component can be supplied by one or more suppliers. The following component information is kept: component ID, name, description, suppliers who supply them, and products in which they are used.', 1);
 
-insert entity (id, name) VALUES (1, 'Component');
+insert entity (id, name, er_model_id) VALUES (1, 'Component', 1);
 
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('CompId', true, false, 1);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('CompName', false, false, 1);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('Description', false, false, 1);
 
-insert entity (id, name) VALUES (2, 'CompSupp');
+insert entity (id, name, er_model_id) VALUES (2, 'CompSupp', 1);
 
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('CompId', true, true, 2);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('SuppId', true, true, 2);
 
-insert entity (id, name) VALUES (3, 'Supplier');
+insert entity (id, name, er_model_id) VALUES (3, 'Supplier', 1);
 
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('SuppId', true, false, 3);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('SuppName', false, false, 3);
 
-insert entity (id, name) VALUES (4, 'Build');
+insert entity (id, name, er_model_id) VALUES (4, 'Build', 1);
 
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('CompId', true, true, 4);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('CompName', true, true, 4);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('QtyOfComp', false, false, 4);
 
-insert entity (id, name) VALUES (5, 'Product');
+insert entity (id, name, er_model_id) VALUES (5, 'Product', 1);
 
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('ProdId', true, false, 1);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('ProdName', false, false, 1);
