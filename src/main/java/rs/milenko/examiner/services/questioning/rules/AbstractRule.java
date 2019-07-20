@@ -10,13 +10,13 @@ import java.util.List;
 
 @Data
 public abstract class AbstractRule<E> implements Rule {
-    protected int percentageOfElementsUsed = 40;
-    protected int minNumberOfEntitiesUsed = 1;
-    protected int maxNumberOfEntitiesUsed = 5;
+    protected int percentageOfElementsUsed;
+    protected int minNumberOfEntitiesUsed;
+    protected int maxNumberOfEntitiesUsed;
 
-    protected double numberOfPoints = 50;
+    protected double numberOfPoints;
 
-    public AbstractRule(int percentageOfElementsUsed, int minNumberOfEntitiesUsed, int maxNumberOfEntitiesUsed, double numberOfPoints) {
+    protected AbstractRule(int percentageOfElementsUsed, int minNumberOfEntitiesUsed, int maxNumberOfEntitiesUsed, double numberOfPoints) {
         this.percentageOfElementsUsed = percentageOfElementsUsed;
         this.minNumberOfEntitiesUsed = minNumberOfEntitiesUsed;
         this.maxNumberOfEntitiesUsed = maxNumberOfEntitiesUsed;
@@ -32,7 +32,7 @@ public abstract class AbstractRule<E> implements Rule {
     protected String generateTextQuestion(String ...args) {
         String randomQuestionTemplate = getRandomlySelectedElements(new ArrayList<>(getQuestionTemplates()), 1).get(0);
 
-        return String.format(randomQuestionTemplate, args);
+        return String.format(randomQuestionTemplate, (Object[]) args);
     }
 
     protected abstract List<String> getQuestionTemplates();
