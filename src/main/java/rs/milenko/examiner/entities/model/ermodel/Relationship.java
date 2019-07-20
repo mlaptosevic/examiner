@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-public class Relationship {
+public class Relationship implements ERModelElement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

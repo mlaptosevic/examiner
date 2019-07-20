@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @javax.persistence.Entity
-public class RelationshipEdge {
+public class RelationshipEdge implements ERModelElement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

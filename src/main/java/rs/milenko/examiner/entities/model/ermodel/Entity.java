@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @javax.persistence.Entity
-public class Entity {
+public class Entity implements ERModelElement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
