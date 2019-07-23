@@ -1,5 +1,8 @@
 FROM openjdk:11.0-jre
 
+RUN adduser -D myuser
+USER myuser
+
 VOLUME /tmp
 
 COPY build/libs/examiner.jar app.jar
