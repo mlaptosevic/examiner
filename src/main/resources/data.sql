@@ -8,7 +8,7 @@ insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('Comp
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('CompName', false, false, 1);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('Description', false, false, 1);
 
-insert entity (id, name, er_model_id) VALUES (2, 'CompSupp', 1);
+insert entity (id, name, er_model_id) VALUES (2, 'Component Support', 1);
 
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('CompId', true, true, 2);
 insert attribute (name, is_primary_key, is_foreign_key, entity_id) VALUES ('SuppId', true, true, 2);
