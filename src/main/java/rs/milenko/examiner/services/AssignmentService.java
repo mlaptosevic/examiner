@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import rs.milenko.examiner.entities.model.Assignment;
 import rs.milenko.examiner.entities.repositories.AssignmentRepository;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
@@ -24,5 +23,9 @@ public class AssignmentService {
         Assignment assignment = assignmentRepository.getOne(id);
 
         return assignment.getAssignmentText();
+    }
+
+    public Assignment findAssignment(long assignmentId) {
+        return assignmentRepository.getOne(assignmentId);
     }
 }
