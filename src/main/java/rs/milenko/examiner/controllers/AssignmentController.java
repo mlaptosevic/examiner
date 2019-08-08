@@ -3,10 +3,7 @@ package rs.milenko.examiner.controllers;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rs.milenko.examiner.entities.model.Assignment;
 import rs.milenko.examiner.services.AssignmentService;
 import rs.milenko.examiner.services.QuestionService;
@@ -16,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/assignment")
+@CrossOrigin
 @Api("Set of endpoints used for Assignment")
 public class AssignmentController {
 
@@ -43,6 +41,12 @@ public class AssignmentController {
     @ApiOperation("Retrieving randomly created questions for specified assignment")
     public List<Question> getQuestions(@ApiParam("Id of assignment") @PathVariable long id) {
         return questionService.getQuestionsForAssignment(id);
+    }
+
+    @GetMapping("/student/{studentId}")
+    @ApiOperation("Retrieve assignment for student")
+    public Assignment getStudentAssignment(@ApiParam("Id of student") @PathVariable long studentId) {
+        return assignmentService.getStudentAssignment(studentId);
     }
 
 }
