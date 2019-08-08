@@ -38,11 +38,6 @@ public class QuestionService {
         return questionGenerator.generateQuestions(erModel);
     }
 
-    // TODO: change after adding student logic
-    public Assignment getStudentAssignment(long studentId) {
-        return assignmentRepository.getOne(2L);
-    }
-
     public Question getUnansweredQuestion(Exam exam) {
         List<Question> questions = questionRepository.getAllByExamAndQuestionStatus(exam, QuestionStatus.UNANSWERED);
 

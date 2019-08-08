@@ -28,4 +28,9 @@ public class AssignmentService {
     public Assignment findAssignment(long assignmentId) {
         return assignmentRepository.getOne(assignmentId);
     }
+
+    // TODO: change after adding student logic
+    public Assignment getStudentAssignment(long studentId) {
+        return findAssignment(2);
+    }
 }

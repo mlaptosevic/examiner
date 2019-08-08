@@ -46,7 +46,7 @@ public class AssignmentController {
     @GetMapping("/student/{studentId}")
     @ApiOperation("Retrieve assignment for student")
     public Assignment getStudentAssignment(@ApiParam("Id of student") @PathVariable long studentId) {
-        return questionService.getStudentAssignment(studentId);
+        return assignmentService.getStudentAssignment(studentId);
     }
 
 }
