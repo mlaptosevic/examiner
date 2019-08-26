@@ -8,11 +8,11 @@ import java.util.List;
 
 @Data
 @Entity
-public class Relationship implements ERModelElement {
+public class Relationship extends ERModelElement {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private long id;
 
     @OneToOne
     @JoinColumn(referencedColumnName = "id")

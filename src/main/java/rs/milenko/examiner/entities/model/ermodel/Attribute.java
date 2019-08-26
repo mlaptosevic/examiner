@@ -6,11 +6,11 @@ import javax.persistence.*;
 
 @Data
 @javax.persistence.Entity
-public class Attribute implements ERModelElement {
+public class Attribute extends ERModelElement {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private long id;
 
     private String name;
 

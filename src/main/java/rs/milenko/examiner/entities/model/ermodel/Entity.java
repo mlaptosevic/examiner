@@ -7,11 +7,11 @@ import java.util.List;
 
 @Data
 @javax.persistence.Entity
-public class Entity implements ERModelElement {
+public class Entity extends ERModelElement {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private long id;
 
     private String name;
 
