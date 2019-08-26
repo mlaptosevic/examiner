@@ -7,6 +7,8 @@ import rs.milenko.examiner.entities.model.ermodel.ERModelElement;
 import rs.milenko.examiner.services.ExamService;
 import rs.milenko.examiner.services.QuestionService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/v1/exam")
 @CrossOrigin
@@ -30,11 +32,15 @@ public class ExamController {
         return examService.getQuestion(examId);
     }
 
-    // TODO: refator to question controller
     @PostMapping("/{examId}/question/{questionId}")
     public void answerQuestion(@PathVariable long examId, @PathVariable long questionId, @RequestBody ERModelElement erModelElement) {
         System.out.println(erModelElement);
         questionService.answerQuestion(questionId, erModelElement);
+    }
+
+    @GetMapping("/{examId}/questions")
+    public List<Question> getAllQuestions(@PathVariable long examId) {
+        return questionService.getAllQuestionsForExam(examId);
     }
 
     @GetMapping("/{examId}/status")

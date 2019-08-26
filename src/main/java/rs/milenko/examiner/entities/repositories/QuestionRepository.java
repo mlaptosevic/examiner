@@ -12,4 +12,6 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
     List<Question> getAllByExamAndQuestionStatus(Exam exam, QuestionStatus status);
 
     int countAllByExamAndQuestionStatus(Exam exam, QuestionStatus status);
+
+    List<Question> getAllByExamId(long examId);
 }

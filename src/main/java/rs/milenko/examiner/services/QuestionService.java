@@ -93,4 +93,8 @@ public class QuestionService {
 
         questions.forEach(question -> questionRepository.save(question));
     }
+
+    public List<Question> getAllQuestionsForExam(long examId) {
+        return questionRepository.getAllByExamId(examId);
+    }
 }

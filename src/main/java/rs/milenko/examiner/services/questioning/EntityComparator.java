@@ -9,12 +9,12 @@ public class EntityComparator implements CorrectnessComparator {
     @Override
     public boolean isCorrect(Question question, ERModelElement answer) {
 
-        if (!(question.getRightAnswer() instanceof Entity && answer instanceof Entity)) {
+        if (!(answer instanceof Entity)) {
             return false;
         }
 
         final Entity givenAnswer = (Entity) answer;
-        final Entity correctAnswer = (Entity) question.getRightAnswer();
+        final Entity correctAnswer = question.getCorrectEntity();
 
         if (correctAnswer.getName().equals(givenAnswer.getName())) {
             return true;

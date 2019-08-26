@@ -5,7 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import rs.milenko.examiner.entities.model.ermodel.ERModelElement;
+import rs.milenko.examiner.entities.model.ermodel.Attribute;
+import rs.milenko.examiner.entities.model.ermodel.Entity;
+import rs.milenko.examiner.entities.model.ermodel.Relationship;
+import rs.milenko.examiner.entities.model.ermodel.RelationshipEdge;
+
 
 import javax.persistence.*;
 
@@ -14,7 +18,7 @@ import static rs.milenko.examiner.entities.model.QuestionStatus.UNANSWERED;
 @Data
 @AllArgsConstructor
 @Builder
-@Entity
+@javax.persistence.Entity
 @NoArgsConstructor
 public class Question {
 
@@ -32,11 +36,25 @@ public class Question {
     @JsonIgnore
     @JoinColumn(referencedColumnName = "id")
     @OneToOne
-    private ERModelElement rightAnswer;
+    private Entity correctEntity;
+
+    @JsonIgnore
+    @JoinColumn(referencedColumnName = "id")
+    @OneToOne
+    private Relationship correctRelationship;
+
+    @JsonIgnore
+    @JoinColumn(referencedColumnName = "id")
+    @OneToOne
+    private Attribute correctAttribute;
+
+    @JsonIgnore
+    @JoinColumn(referencedColumnName = "id")
+    @OneToOne
+    private RelationshipEdge correnctRelationshipEdge;
 
     private double numberOfPoints;
 
-    @JsonIgnore
     @Builder.Default
     private QuestionStatus questionStatus = UNANSWERED;
 }

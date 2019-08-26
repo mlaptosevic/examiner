@@ -7,11 +7,10 @@ import javax.persistence.*;
 
 @Data
 @javax.persistence.Entity
-public class RelationshipEdge extends ERModelElement {
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private long id;
+public class RelationshipEdge implements ERModelElement {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @OneToOne
     @JoinColumn(referencedColumnName = "id")
