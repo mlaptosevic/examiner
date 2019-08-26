@@ -30,9 +30,8 @@ public class Question {
     private Exam exam;
 
     @JsonIgnore
-//    @JoinColumn(referencedColumnName = "id")
-//    @OneToOne
-    @Transient
+    @JoinColumn(referencedColumnName = "id")
+    @OneToOne
     private ERModelElement rightAnswer;
 
     private double numberOfPoints;
