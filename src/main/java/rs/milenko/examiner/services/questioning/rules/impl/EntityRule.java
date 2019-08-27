@@ -39,7 +39,7 @@ public final class EntityRule extends AbstractRule<Entity> {
 
             return Question.builder()
                     .textOfQuestion(textOfQuestion)
-                    .rightAnswer(entity)
+                    .correctEntity(entity)
                     .numberOfPoints(numberOfPointsPerQuestion)
                     .build();
         })

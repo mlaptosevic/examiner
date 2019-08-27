@@ -3,8 +3,11 @@ package rs.milenko.examiner.controllers;
 import org.springframework.web.bind.annotation.*;
 import rs.milenko.examiner.entities.model.ExamStatus;
 import rs.milenko.examiner.entities.model.Question;
+import rs.milenko.examiner.entities.model.ermodel.ERModelElement;
 import rs.milenko.examiner.services.ExamService;
 import rs.milenko.examiner.services.QuestionService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/exam")
@@ -19,7 +22,6 @@ public class ExamController {
         this.questionService = questionService;
     }
 
-
     @PostMapping("/new/student/{studentId}/assignment/{assignmentId}")
     public long createNewExam(@PathVariable long studentId, @PathVariable long assignmentId) {
         return examService.createNewExam(studentId, assignmentId);
@@ -30,12 +32,15 @@ public class ExamController {
         return examService.getQuestion(examId);
     }
 
-    // TODO: refator to question controller
     @PostMapping("/{examId}/question/{questionId}")
-    public void answerQuestion(@PathVariable long examId, @PathVariable long questionId) {
-        questionService.answerQuestion(questionId);
+    public void answerQuestion(@PathVariable long examId, @PathVariable long questionId, @RequestBody ERModelElement erModelElement) {
+        System.out.println(erModelElement);
+        questionService.answerQuestion(questionId, erModelElement);
+    }
 
-        return;
+    @GetMapping("/{examId}/questions")
+    public List<Question> getAllQuestions(@PathVariable long examId) {
+        return questionService.getAllQuestionsForExam(examId);
     }
 
     @GetMapping("/{examId}/status")
